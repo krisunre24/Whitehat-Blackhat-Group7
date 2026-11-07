@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Black Hat - Greenhouse Gas Emissions</title>
+
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+
+    <main class="blackhat-page">
+
+        <header>
+            <h1>Greenhouse Gas Emissions Remain Near 1990 Levels</h1>
+
+            <p class="subtitle">
+                Despite decades of climate policy, overall greenhouse gas
+                emissions have shown relatively little long-term change.
+            </p>
+        </header>
+
+
+        <section class="controls">
+
+            <label for="area-select">
+                View emissions for:
+            </label>
+
+            <select id="area-select">
+                <option value="OECD">OECD</option>
+                <option value="United States">United States</option>
+                <option value="OECD America">OECD America</option>
+            </select>
+
+        </section>
+
+
+        <section class="chart-section">
+
+            <div id="chart"></div>
+
+            <div id="tooltip" class="tooltip"></div>
+
+        </section>
+
+
+        <section class="summary">
+
+            <div class="summary-card">
+                <span class="summary-label">1990 Emissions</span>
+                <span id="start-value" class="summary-value">--</span>
+            </div>
+
+            <div class="summary-card">
+                <span class="summary-label">2022 Emissions</span>
+                <span id="end-value" class="summary-value">--</span>
+            </div>
+
+            <div class="summary-card">
+                <span class="summary-label">32-Year Change</span>
+                <span id="change-value" class="summary-value">--</span>
+            </div>
+
+        </section>
+
+        <p id="takeaway" class="takeaway">
+            After more than three decades, emissions remain within 5% of their 1990 level.
+        </p>
+        
+        <footer>
+            <p>
+                Source: OECD Air Emissions - Greenhouse Gas Emissions Inventories
+            </p>
+
+            <p>
+                Measure: Total emissions excluding LULUCF,
+                tonnes of CO₂-equivalent.
+            </p>
+        </footer>
+
+    </main>
+
+
+    <script src="blackhat.js"></script>
+
+</body>
+</html>
