@@ -60,6 +60,8 @@ select {
 
 .endpoint {
     fill: steelblue;
+    stroke: white;
+    stroke-width: 3;
 }
 
 .endpoint-label {
@@ -110,9 +112,12 @@ select {
 }
 
 footer {
-    margin-top: 30px;
-    font-size: 13px;
-    color: #666;
+    margin-top: 24px;
+    padding-top: 14px;
+    border-top: 1px solid #ddd;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.5;
 }
 
 .takeaway {
@@ -121,4 +126,47 @@ footer {
     font-size: 17px;
     font-weight: 600;
     color: #444;
+}
+
+.reference-line {
+    stroke: #888;
+    stroke-width: 1.2;
+    stroke-dasharray: 6 5;
+    opacity: 0.35;
+}
+
+.home-link {
+    display: inline-block;
+    margin-bottom: 15px;
+    color: #555;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+.home-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 700px) {
+
+    .blackhat-page {
+        padding: 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .summary {
+        flex-direction: column;
+    }
+
+    .controls {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .chart-section {
+        padding: 15px;
+    }
 }

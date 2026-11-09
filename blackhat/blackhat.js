@@ -184,7 +184,8 @@ d3.csv("../data/greenhouse_gas_emissions.csv")
                 .duration(600)
                 .attr("fill", "none")
                 .attr("stroke", "steelblue")
-                .attr("stroke-width", 4)
+                .attr("stroke-width", 3)
+                .attr("opacity", 0.65)
                 .attr("d", line);
 
 
@@ -221,8 +222,8 @@ d3.csv("../data/greenhouse_gas_emissions.csv")
                 .on("mousemove", function (event) {
 
                     tooltip
-                        .style("left", `${event.pageX + 15}px`)
-                        .style("top", `${event.pageY - 30}px`);
+                        .style("left", `${event.clientX + 15}px`)
+                        .style("top", `${event.clientY - 30}px`);
 
                 })
 
@@ -253,17 +254,15 @@ d3.csv("../data/greenhouse_gas_emissions.csv")
                     ((end.value - start.value) /
                     start.value) * 100;
                 
-                const takeaway = d3.select("#takeaway");
-
-                if (Math.abs(percentChange) <= 5) {
-                    takeaway.text(
-                        "After more than three decades, emissions remain within 5% of their 1990 level."
-                    );
-                } else {
-                    takeaway.text(
-                        `After more than three decades, emissions changed by only ${Math.abs(percentChange).toFixed(1)}% from their 1990 level.`
-                    );
-                }
+                // 1990 reference line
+                svg.selectAll(".reference-line")
+                    .data([start])
+                    .join("line")
+                    .attr("class", "reference-line")
+                    .attr("x1", xScale(1990))
+                    .attr("x2", xScale(2022))
+                    .attr("y1", yScale(start.value))
+                    .attr("y2", yScale(start.value));
 
                 // -----------------------------
                 // Summary values
@@ -305,7 +304,7 @@ d3.csv("../data/greenhouse_gas_emissions.csv")
                     )
                     .join("circle")
                     .attr("class", "endpoint")
-                    .attr("r", 6)
+                    .attr("r", 7)
                     .attr("cx", d => xScale(d.year))
                     .attr("cy", d => yScale(d.value));
 
