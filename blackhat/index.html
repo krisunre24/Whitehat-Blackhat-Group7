@@ -1,31 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
 
     <title>Black Hat - Greenhouse Gas Emissions</title>
 
-    <link rel="stylesheet" href="../css/styles.css">
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
 
     <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
+
 
 <body>
 
     <main class="blackhat-page">
 
-        <a class="home-link" href="../index.html">← Back to project home</a>
+        <!-- Navigation back to the main project page -->
+        <a
+            class="home-link"
+            href="../index.html"
+        >
+            ← Back to project home
+        </a>
 
+
+        <!-- Main title and framing -->
         <header>
-            <h1>Greenhouse Gas Emissions Remain Near 1990 Levels</h1>
+
+            <h1>
+                Greenhouse Gas Emissions Remain Near 1990 Levels
+            </h1>
 
             <p class="subtitle">
                 A long-term view of greenhouse gas emissions since 1990.
             </p>
+
         </header>
 
 
+        <!-- Interactive dropdown -->
         <section class="controls">
 
             <label for="area-select">
@@ -33,56 +55,188 @@
             </label>
 
             <select id="area-select">
-                <option value="OECD">OECD</option>
-                <option value="United States">United States</option>
-                <option value="OECD America">OECD America</option>
+
+                <option value="OECD">
+                    OECD
+                </option>
+
+                <option value="United States">
+                    United States
+                </option>
+
+                <option value="OECD America">
+                    OECD America
+                </option>
+
             </select>
 
         </section>
 
 
+        <!-- D3 visualization -->
         <section class="chart-section">
 
             <div id="chart"></div>
 
-            <div id="tooltip" class="tooltip"></div>
+            <div
+                id="tooltip"
+                class="tooltip"
+            ></div>
 
         </section>
 
 
+        <!-- Endpoint summary cards -->
         <section class="summary">
 
             <div class="summary-card">
-                <span class="summary-label">1990 Emissions</span>
-                <span id="start-value" class="summary-value">--</span>
+
+                <span class="summary-label">
+                    1990 Emissions
+                </span>
+
+                <span
+                    id="start-value"
+                    class="summary-value"
+                >
+                    --
+                </span>
+
             </div>
 
-            <div class="summary-card">
-                <span class="summary-label">2022 Emissions</span>
-                <span id="end-value" class="summary-value">--</span>
-            </div>
 
             <div class="summary-card">
-                <span class="summary-label">32-Year Change</span>
-                <span id="change-value" class="summary-value">--</span>
+
+                <span class="summary-label">
+                    2022 Emissions
+                </span>
+
+                <span
+                    id="end-value"
+                    class="summary-value"
+                >
+                    --
+                </span>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    32-Year Change
+                </span>
+
+                <span
+                    id="change-value"
+                    class="summary-value"
+                >
+                    --
+                </span>
+
             </div>
 
         </section>
-        
-        <footer>
+
+
+        <!-- Assignment write-up -->
+        <section class="writeup-section">
+
+            <h2>
+                Black Hat Visualization Write-Up
+            </h2>
+
             <p>
-                Source: OECD Air Emissions - Greenhouse Gas Emissions Inventories
+                For the black hat visualization, I wanted to show how the same
+                real data can leave a very different impression depending on
+                how it’s presented. I didn’t change a single OECD number.
+                Instead, I played with the scale, the wording, and which parts
+                of the graph catch your eye first. The goal was to make the
+                long-term change look smaller and steadier than it really is
+                when you look at the whole trend.
             </p>
 
             <p>
-                Measure: Total emissions excluding LULUCF. Values shown in Gt CO₂e.
+                One of the main choices I made was using a y-axis from 0 to 25
+                gigatonnes of CO₂-equivalent. The actual values only take up a
+                smaller part of that range, which makes the changes over time
+                look much flatter than they really are. I also made the 1990
+                and 2022 endpoints stand out more than the rest of the line and
+                added a light reference line at the 1990 value. This makes it
+                easier for someone to compare the first and last years while
+                paying less attention to what happened in between, including
+                the rise in emissions during the 2000s.
             </p>
+
+            <p>
+                The title, “Greenhouse Gas Emissions Remain Near 1990 Levels,”
+                also pushes the viewer toward that same idea before they look
+                closely at the graph. I kept the subtitle more neutral so the
+                page would still feel like a regular data visualization
+                instead of making the misleading intent too obvious. I also
+                chose OECD, the United States, and OECD America for the dropdown
+                because their 1990 and 2022 values are fairly close compared
+                with many other areas in the dataset. Larger regional totals
+                like OECD also hide some of the bigger differences between
+                individual countries.
+            </p>
+
+
+            <h3>
+                Data Source
+            </h3>
+
+            <p>
+                The data came from the OECD Data Explorer, Air Emissions:
+                Greenhouse Gas Emissions Inventories. I used annual greenhouse
+                gas emissions, specifically total emissions excluding LULUCF,
+                reported in tonnes of CO₂-equivalent. The visualization was
+                built using HTML, CSS, JavaScript, and D3.js.
+            </p>
+
+
+            <h3>
+                Development Process
+            </h3>
+
+            <p>
+                My partner and I split the work. I took the black hat
+                visualization, and my partner took the white hat one. I spent
+                about 15 hours on my side. A lot of that went into digging
+                through the OECD dataset, checking the year ranges and units,
+                comparing different countries and regions, and then building
+                the D3 chart and fixing what broke. The hardest part was
+                working out which design choices would make the chart
+                misleading but still believable. I kept adjusting the scale,
+                the title, the regions I picked, and the visual emphasis until
+                it looked convincing while still pulling attention toward the
+                1990 and 2022 comparison instead of everything that happened
+                in between.
+            </p>
+
+        </section>
+
+
+        <!-- Source information shown below the visualization -->
+        <footer>
+
+            <p>
+                Source: OECD Air Emissions – Greenhouse Gas Emissions Inventories
+            </p>
+
+            <p>
+                Measure: Total emissions excluding LULUCF.
+                Values shown in Gt CO₂e.
+            </p>
+
         </footer>
 
     </main>
 
 
+    <!-- Black Hat visualization logic -->
     <script src="blackhat.js"></script>
 
 </body>
+
 </html>
