@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>White Hat - Greenhouse Gas Emissions</title>
+
+    <link
+        rel="stylesheet"
+        href="../css/styles.css"
+    >
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+
+<body>
+
+    <main class="blackhat-page">
+
+        <!-- Navigation back to the main project page -->
+        <a
+            class="home-link"
+            href="../index.html"
+        >
+            ← Back to project home
+        </a>
+
+
+        <!-- Main title and framing -->
+        <header>
+
+            <h1>
+                Change in Greenhouse Gas Emissions
+            </h1>
+
+            <p class="subtitle">
+                A long-term view of greenhouse gas emissions since 1990.
+            </p>
+
+        </header>
+
+
+        <!-- Interactive dropdown -->
+        <section class="controls">
+
+            <label for="area-select">
+                Explore the trend:
+            </label>
+
+            <select id="area-select">
+
+                <option value="OECD">
+                    OECD
+                </option>
+
+                <option value="United States">
+                    United States
+                </option>
+
+                <option value="OECD America">
+                    OECD America
+                </option>
+
+            </select>
+
+        </section>
+
+
+        <!-- D3 visualization -->
+        <section class="chart-section">
+
+            <div id="chart"></div>
+
+            <div
+                id="tooltip"
+                class="tooltip"
+            ></div>
+
+        </section>
+
+
+        <!-- Endpoint summary cards -->
+        <section class="summary">
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    1990 Emissions
+                </span>
+
+                <span
+                    id="start-value"
+                    class="summary-value"
+                >
+                    --
+                </span>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    2022 Emissions
+                </span>
+
+                <span
+                    id="end-value"
+                    class="summary-value"
+                >
+                    --
+                </span>
+
+            </div>
+
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    32-Year Change
+                </span>
+
+                <span
+                    id="change-value"
+                    class="summary-value"
+                >
+                    --
+                </span>
+
+            </div>
+
+        </section>
+
+
+        <!-- Assignment write-up -->
+        <section class="writeup-section">
+
+            <h2>
+                White Hat Visualization Write-Up
+            </h2>
+
+            <p>
+                In the black hat visualization, the range of values was purposely expanded with the goal
+                of deceiving the viewer; the change in CO2 levels was meant to appear neutral and stagnant
+                as time passed. The y-axis ranged from 0 to 25
+                gigatonnes of CO₂-equivalent. Since the actual values only take up a
+                smaller part of that range, the changes over time
+                appeared to be much flatter than they really are. 
+            </p>
+
+            <p>
+                However, change should be measured relative to a baseline in order to deliver a more accurate
+                comparison of CO2 levels over time. In order to do this, the scale was tightened to exclude values far
+                beyond the range of y values. Now, the y-axis ranges from 14.0 to 18.0 Gt of CO2-equivalent, 
+                enabling a more just comparison of CO2 levels over time. 
+            </p>
+
+            <p>
+                This visualization was created with the goal of maximizing effectiveness: how readily perceived
+                the information is to the viewer. It takes Weber's Law into account, which is a mathematical way of 
+                expressing how large a difference must be in order for humans to notice it. The law relies on the 
+                fact that humans judge based on the relative, not absolute difference of values. The scale adjustment 
+                for this visualization also considers this phenomenon. The title was also changed to provide an objective perspective
+                of the chart instead of introducing potential bias in the user's perception of the data.
+            </p>
+
+
+            <h3>
+                Data Source
+            </h3>
+
+            <p>
+                The data came from the OECD Data Explorer, Air Emissions:
+                Greenhouse Gas Emissions Inventories. We used annual greenhouse
+                gas emissions, specifically total emissions excluding LULUCF,
+                reported in tonnes of CO₂-equivalent. The visualization was
+                built using HTML, CSS, JavaScript, and D3.js.
+            </p>
+
+
+            <h3>
+                Development Process
+            </h3>
+
+            <p>
+                My partner and I split the work. Kiran worked on the black hat
+                visualization, and I (Trenton) worked on the white hat one. I spent approximately
+                two hours working through the visualization and write-up. Most of my time was spent reading
+                through the codebase and thinking of a way to make the black hat visualization more interpretable.
+            </p>
+
+        </section>
+
+
+        <!-- Source information shown below the visualization -->
+        <footer>
+
+            <p>
+                Source: OECD Air Emissions – Greenhouse Gas Emissions Inventories
+            </p>
+
+            <p>
+                Measure: Total emissions excluding LULUCF.
+                Values shown in Gt CO₂e.
+            </p>
+
+        </footer>
+
+    </main>
+
+
+    <!-- White Hat visualization logic -->
+    <script src="whitehat.js"></script>
+
+</body>
+
+</html>
