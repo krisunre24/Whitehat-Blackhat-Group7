@@ -96,6 +96,14 @@ h1 {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
 }
 
+.chart-section li {
+    margin-bottom: 10px;
+}
+
+.chart-section li:last-child {
+    margin-bottom: 0;
+}
+
 #chart svg {
     display: block;
     width: 100%;
@@ -121,6 +129,101 @@ h1 {
     stroke-width: 3;
 }
 
+.parent {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: stretch; /* both sections always match the taller one */
+}
+
+.clickable-section {
+    display: flex;          /* lets the section inside fill the link's height */
+    flex: 1 1 0;            /* both links share the row width equally */
+    min-width: 0;
+    text-decoration: none;
+    color: inherit;
+}
+
+.clickable-section :hover {
+    transform: scale(1.05);
+}
+
+.blackhat-section {
+    background: black;
+    color: white;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    flex: 1;                /* fill the clickable link (equal width and height) */
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+.whitehat-section {
+    background: white;
+    color: black;
+    padding: 20px 25px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+    text-align: center;
+    flex: 1;                /* fill the clickable link (equal width and height) */
+    min-width: 0;
+    box-sizing: border-box;
+}
+
+/* Index page intro sections */
+
+.intro-section {
+    margin: 25px 0;
+    padding: 24px 28px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+    line-height: 1.6;
+}
+
+.intro-section h2 {
+    margin: 0 0 12px;
+    font-size: 22px;
+}
+
+.intro-section p {
+    margin: 0 0 14px;
+    font-size: 15px;
+    color: #333;
+}
+
+.intro-section p:last-child {
+    margin-bottom: 0;
+}
+
+.fact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+}
+
+.fact-card {
+    padding: 14px;
+    background: #f4f6f8;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.fact-label {
+    display: block;
+    color: #777;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.fact-value {
+    display: block;
+    margin-top: 6px;
+    font-size: 16px;
+    font-weight: 700;
+}
 
 /* Endpoint text */
 
@@ -337,4 +440,19 @@ footer p {
     .writeup-section h2 {
         font-size: 22px;
     }
+}
+
+/* --------------------------------------------------
+   CHART DISCLAIMERS (white hat)
+-------------------------------------------------- */
+
+.chart-notes {
+    margin-top: 14px;
+    color: #777;
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.chart-notes p {
+    margin: 4px 0;
 }

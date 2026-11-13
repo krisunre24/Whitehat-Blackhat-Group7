@@ -171,6 +171,9 @@ d3.csv("../data/greenhouse_gas_emissions.csv")
 
             yScale.domain([minVal - pad, maxVal + pad]).nice();
 
+            d3.select("#axis-min")
+                .text(`${(yScale.domain()[0] / 1000000).toFixed(1)} Gt CO₂e`);
+
             yAxisGroup.call(
                 d3.axisLeft(yScale)
                     .ticks(6)

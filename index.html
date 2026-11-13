@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Assignment 2: White Hat/Black Hat Visualization</title>
+
+    <link
+        rel="stylesheet"
+        href="./css/styles.css"
+    >
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+
+<body>
+
+    <main class="blackhat-page">
+
+        <!-- Main title and framing -->
+        <header>
+
+            <h1>
+                Assignment 2: White Hat/Black Hat Visualization
+            </h1>
+
+            <p class="subtitle">
+                Kiran Manoj & Trenton Regis
+            </p>
+
+        </header>
+
+        <!-- Assignment introduction -->
+        <section class="intro-section">
+            <h2>About This Assignment</h2>
+            <p>
+                Charts can show very different interpretations from the exact same numbers. This project
+                visualizes one dataset twice: a <strong>black hat</strong> version that uses design
+                choices to mislead the viewer, and a <strong>white hat</strong> version that
+                presents the data clearly and honestly. <br><br><strong><em>Choose a visualization below to explore it.</em></strong>
+            </p>
+        </section>
+
+            <div class="parent">
+                <a href="./blackhat/index.html" class="clickable-section">
+                    <section class="blackhat-section">
+                        <h2>Black Hat Visualization</h2>
+                        <p> 
+                            This visualization is intentionally inappropriate for the audience. 
+                            The axes are scaled with the goal of misleading the user. 
+                        </p>
+                    </section>
+                </a>
+                
+                <a href="./whitehat/index.html" class="clickable-section">
+                    <section class="whitehat-section">
+                        <h2>White Hat Visualization</h2>
+                        <p>
+                            The visualization is easy to interpret for the intended audience.
+                            It is focused on clear communication, transparancy, and accuracy.
+                        </p>
+                    </section>
+                </a>
+        </div>
+
+        <!-- Dataset overview -->
+        <section class="intro-section">
+            <h2>The Data</h2>
+            <p>
+                Both visualizations use annual greenhouse gas emissions from the OECD Data Explorer
+                (Air Emissions: Greenhouse Gas Emissions Inventories).
+            </p>
+            <div class="fact-grid">
+                <div class="fact-card">
+                    <span class="fact-label">Measure</span>
+                    <span class="fact-value">Total emissions excluding LULUCF</span>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-label">Unit</span>
+                    <span class="fact-value">Tonnes of CO₂-equivalent</span>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-label">Time span shown</span>
+                    <span class="fact-value">1990 – 2022</span>
+                </div>
+                <div class="fact-card">
+                    <span class="fact-label">Regions explored</span>
+                    <span class="fact-value">OECD, United States, OECD America</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to read this project -->
+        <section class="intro-section">
+            <h2>Key Distinctions Between Visualizations</h2>
+            <p>
+                The two versions present the same trend, but in very different manners.
+                There is a major difference in the y-axis range, the title, and how large the change in emissions looks.
+                Hover over the lines in either visualization to see exact values.
+            </p>
+        </section>
+
+        <section class="intro-section">
+            <h2>AI Usage</h2>
+            <p>
+                Claude was used to aid with formatting the index page and debugging. It was also used to adjust 
+                the scale of the White Hat visualization to make the visualization more interpretable to the user. 
+                It was also used to aid with interpreting how data aggregations could potentially introduce bias
+                in the White Hat visualization.
+            </p>
+        </section>
+        
+        
+    </main>
+</body>

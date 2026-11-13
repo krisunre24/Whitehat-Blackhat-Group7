@@ -84,8 +84,7 @@
             ></div>
 
         </section>
-
-
+        
         <!-- Endpoint summary cards -->
         <section class="summary">
 
@@ -138,6 +137,36 @@
 
         </section>
 
+        <!-- Transparency disclaimers -->
+        <section class="writeup-section" style="margin-top: 20px;">
+            <h2>Disclaimers</h2>
+            <ul>
+                <li>
+                    The y-axis does not start at zero. It begins at
+                    <span id="axis-min">--</span> to make changes over time easier to see.
+                </li>
+                <li>
+                    The y-axis scale adjusts to each region you select,
+                    so steepness should not be compared across regions. Check the axis values.
+                </li>
+                <li>
+                    The data is filtered to the years 1990 through 2022
+                    to ensure there are no gaps in the data.
+                </li>
+                <li>
+                    <strong>Possible bias:</strong> The values are total emissions, not per person,
+                    so larger or more populous regions naturally appear higher. They exclude land use,
+                    land-use change and forestry (LULUCF), which can add or remove significant emissions.
+                    The figures are self-reported national inventories, so reporting methods may differ
+                    by country. The regions also overlap (the United States is part of OECD America, which
+                    is part of the OECD), and each is an aggregate that can hide differences between
+                    individual countries. Lastly, three regions are shown, so this view does not represent
+                    every country.
+                </li>
+            </ul>
+
+        </section>
+
 
         <!-- Assignment write-up -->
         <section class="writeup-section">
@@ -158,9 +187,9 @@
             <p>
                 However, change should be measured relative to a baseline in order to deliver a more accurate
                 comparison of CO2 levels over time. In order to do this, the scale was tightened to exclude values far
-                beyond the range of y values. Now, the y-axis ranges from 14.0 to 18.0 Gt of CO2-equivalent, 
+                beyond the range of y values. Now, the y-axis range is more restricted to the actual data values,
                 enabling a more just comparison of CO2 levels over time. 
-            </p>
+            </p> 
 
             <p>
                 This visualization was created with the goal of maximizing effectiveness: how readily perceived
@@ -169,6 +198,11 @@
                 fact that humans judge based on the relative, not absolute difference of values. The scale adjustment 
                 for this visualization also considers this phenomenon. The title was also changed to provide an objective perspective
                 of the chart instead of introducing potential bias in the user's perception of the data.
+            </p>
+
+            <p>
+                Another design choice made was the addition of disclaimers to increase transparency. The intent was to 
+                establish clear communication with the audience regarding 
             </p>
 
 
@@ -192,8 +226,9 @@
             <p>
                 My partner and I split the work. Kiran worked on the black hat
                 visualization, and I (Trenton) worked on the white hat one. I spent approximately
-                two hours working through the visualization and write-up. Most of my time was spent reading
+                2 hours working through the visualization and write-up. Most of my time was spent reading
                 through the codebase and thinking of a way to make the black hat visualization more interpretable.
+                Beyond the visualization, I spent about 2 hours developing the index page for the project.
             </p>
 
         </section>
